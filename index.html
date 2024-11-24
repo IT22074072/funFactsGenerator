@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Facts about BTS!</title>
+    <style>
+        :root {
+            --background-color: #f3e9fc;
+            --text-color: #4a148c;
+            --button-bg-color: #7e57c2;
+            --button-text-color: #ffffff;
+            --container-bg-color: #ffffff;
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            --button-hover-bg-color: #6a1b9a;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .fact-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 12px;
+            background-color: var(--container-bg-color);
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .fact-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        #fact {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 25px;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--button-hover-bg-color);
+            transform: scale(1.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #1e1e2f;
+                --text-color: #d1c4e9;
+                --container-bg-color: #2c2c3b;
+                --button-bg-color: #5e35b1;
+                --button-hover-bg-color: #4527a0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fact-container">
+        <h1>Fun Facts about BTS!</h1>
+        <p id="fact"></p>
+        <button onclick="showRandomFact()">Get a New Fact</button>
+    </div>
+
+    <script>
+        const facts = [
+            "Name Meaning: BTS stands for Bangtan Sonyeondan (Bulletproof Boy Scouts), symbolizing resilience against societal expectations.",
+            "Record Setters: They were the first K-pop group to top the Billboard 200 chart with their album Love Yourself: Tear.",
+            "UN Ambassadors: BTS partnered with UNICEF for the LOVE MYSELF campaign, promoting self-love and mental health awareness globally.",
+            "Creative Artists: The members write and produce many of their songs, showcasing their deep involvement in their music.",
+            "Global Fanbase: BTS calls their fans ARMY, which stands for Adorable Representative MC for Youth, showing the strong bond between the group and their supporters.",
+           
+        ];
+
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+
+        // Show a fact when the page loads
+        showRandomFact();
+    </script>
+</body>
+</html>
